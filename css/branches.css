@@ -452,14 +452,6 @@ header .phone a:hover::before {
     z-index: 4;
 }
 
-.em-active {
-    width: 2px !important;
-    left: 9px !important;
-    height: 20px !important;
-    top: -3px !important;
-    background: #159ee3;
-}
-
 .show-aside {
     right: 0;
     box-shadow: -20px 0 20px 0 rgba(0, 0, 0, 0.15);
@@ -477,20 +469,36 @@ header .phone a:hover::before {
 
 .active-toggler {
     background: #fff !important;
-    transform: rotate(45deg) !important;
 }
 
 .toggler-em-active {
     background: #159ee3 !important;
 }
 
-.toggler-em-active2 {
-    width: 0 !important;
-}
 
 .main-wrapper-active {
     padding-top: 146px;
 }
+
+.active3 em:first-child{
+    width: 2px !important;
+    left: 9px !important;
+}
+
+
+.active3 em:first-child:first-child +em+em{
+    width: 0 !important;
+}
+
+.active_second em:first-child{
+    height: 20px !important;
+    top: -3px !important;
+}
+
+.active_last{
+    transform: rotate(45deg) !important;
+}
+
 
 /* Start content */
 
