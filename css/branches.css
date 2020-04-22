@@ -1,0 +1,814 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gliroy';
+}
+
+@font-face {
+    font-family: 'Gliroy';
+    src: url(/assets/fonts/Gilroy-Regular.otf);
+}
+
+@font-face {
+    font-family: 'Gliroy Bold';
+    src: url(/assets/fonts/Gilroy-Bold.otf);
+}
+
+@font-face {
+    font-family: 'Gliroy Light';
+    src: url(/assets/fonts/Gilroy-Light.otf);
+}
+
+
+.main-wrapper {
+    min-height: 100%;
+    padding: 0 0 100px;
+    position: relative;
+}
+
+
+/* Start header */
+header {
+    height: 146px;
+}
+
+header>div {
+    height: 146px;
+    padding: 30px 40px 0;
+    position: relative;
+    z-index: 3;
+}
+
+header .phone {
+    padding: 7px 90px 0 80px;
+    text-align: right;
+}
+
+.logo {
+    width: 100px;
+    float: left;
+}
+
+.logo a {
+    background: url(/assets/images/logo.svg) no-repeat 0 0;
+    width: 100px;
+    height: 116px;
+    display: inline-block;
+    background-size: 100% 100%;
+}
+
+
+header .phone span {
+    display: block;
+    padding: 0 0 5px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #159ee3;
+}
+
+header .phone a {
+    display: inline-block;
+    color: #159ee3;
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+    position: relative;
+}
+
+header .phone a::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(/assets/images/phone_icon_active.svg) no-repeat 50%;
+    background-size: contain !important;
+    position: absolute;
+    top: 3px;
+    left: -28px;
+}
+
+header .phone a:hover::before {
+    transform: rotate(0deg);
+    animation: 0.62s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0s 1 normal both running shake;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: rotate(7deg);
+    }
+
+    20%,
+    80% {
+        transform: rotate(-7deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: rotate(7deg);
+    }
+
+    40%,
+    60% {
+        transform: rotate(-7deg);
+    }
+}
+
+/* End header */
+
+/* Start right side */
+
+.right-side {
+    width: 330px;
+    height: 120%;
+    background: #f8fcfe;
+    position: fixed;
+    right: -330px;
+    top: -10%;
+    clip-path: ellipse(100% 50% at 100% 50%);
+    animation-name: right-side-anime;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 0.9s;
+    transition: all 0.9s linear;
+}
+
+.right-side>div {
+    width: 330px;
+    height: 110%;
+    background: #eaf6fd;
+    position: fixed;
+    top: -5%;
+    right: -330px;
+    clip-path: ellipse(100% 50% at 100% 50%);
+    animation-name: right-side-anime2;
+    animation-fill-mode: forwards;
+    animation-duration: 0.9s;
+    transition: all 0.9s linear;
+}
+
+.right-side>div>div {
+    width: 330px;
+    height: 100%;
+    background: #d5edfa;
+    position: fixed;
+    top: -0%;
+    right: -330px;
+    clip-path: ellipse(100% 50% at 100% 50%);
+    animation-name: right-side-anime3;
+    animation-fill-mode: forwards;
+    animation-duration: 0.9s;
+    transition: all 0.9s linear;
+}
+
+@keyframes right-side-anime {
+    from {
+        right: -330px;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes right-side-anime2 {
+    from {
+        right: -330px;
+    }
+
+    to {
+        right: -110px;
+    }
+}
+
+@keyframes right-side-anime3 {
+    from {
+        right: -330px;
+    }
+
+    to {
+        right: -220px;
+    }
+}
+
+.toggler {
+    display: block;
+    width: 56px;
+    height: 56px;
+    background: #159ee3;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 2;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    animation-duration: 0.3s;
+    transition: all 0.3s linear;
+}
+
+.toggler span {
+    display: block;
+    width: 20px;
+    height: 14px;
+    position: absolute;
+    top: calc(50% - 7px);
+    left: calc(50% - 10px);
+}
+
+.toggler em {
+    background: #fff;
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    transform: rotate(0deg);
+    animation-duration: 0.3s;
+    transition: all 0.5s linear;
+}
+
+.toggler em:first-child {
+    left: 0;
+    top: 0;
+}
+
+.toggler em:first-child:first-child+em {
+    top: 6px;
+}
+
+.toggler em:first-child:first-child+em+em {
+    top: 12px;
+}
+
+
+/* End right side */
+
+/* Start inner left navbar */
+
+.inner-nav {
+    display: block;
+    width: 70px;
+    position: absolute;
+    left: 40px;
+    top: 245px;
+}
+
+.inner-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inner-nav ul li {
+    padding: 0 0 20px;
+}
+
+.inner-nav ul li a {
+    display: block;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    overflow: hidden;
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+
+.inner-nav ul li a::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #c2c2c2;
+    opacity: 0.3;
+    border-radius: 0 0 0 100%;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.inner-nav ul li a img {
+    display: block;
+    max-height: 38px;
+    max-width: 38px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.inner-nav ul li a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(225deg, #0fc8f0, #149de2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.inner-nav ul li a:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+}
+
+.inner-nav ul li a:hover::before {
+    opacity: 1;
+}
+
+.inner-nav ul li a:hover::after {
+    background: #0fc8f0;
+    opacity: 0.6;
+}
+
+/* End inner left navbar */
+/*Aside-nav start*/
+.asside-nav {
+    width: 665px;
+    height: 100%;
+    font-size: 0;
+    background: #159ee3;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    z-index: 3;
+    box-shadow: 0px 0 0px 0 rgba(0, 0, 0, 0);
+    clip-path: ellipse(100% 50% at 200% 50%);
+    animation-duration: 0.45s;
+    transition: all 0.45s linear;
+}
+
+.asside-nav ::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+}
+
+.asside-nav ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #5ed1e0;
+}
+
+.asside-nav ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+    height: 30px;
+
+}
+
+.asside-navdiv {
+    padding: 130px 0px 0 60px;
+}
+
+.asside-nav-div {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+    position: relative;
+}
+
+.eachnav {
+    display: inline-block;
+    width: calc(50% - 10px);
+    vertical-align: top;
+    padding: 0px 0px 45px;
+    margin: 0px 5px;
+}
+
+.eachnav h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 0px 0px 30px;
+    margin: 0;
+}
+
+.eachnav h3:last-child {
+    padding: 0px;
+}
+
+.eachnav a {
+    color: rgb(255, 255, 255);
+    position: relative;
+    text-decoration: none;
+}
+
+.eachnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.eachnav ul>li {
+    padding: 0 0 18px;
+}
+
+.eachnav ul li:last-child {
+    padding: 0;
+}
+
+.eachnav ul>li a {
+    font-size: 17px;
+    font-weight: normal;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.eachnav a::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    animation-duration: 0.2s;
+    background: rgb(255, 255, 255);
+    transition: all 0.2s linear 0s;
+}
+
+.eachnav a:hover::before {
+    width: 100%;
+}
+
+.header-show {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+.em-active {
+    width: 2px !important;
+    left: 9px !important;
+    height: 20px !important;
+    top: -3px !important;
+    background: #159ee3;
+}
+
+.show-aside {
+    right: 0;
+    box-shadow: -20px 0 20px 0 rgba(0, 0, 0, 0.15);
+    clip-path: ellipse(110% 200% at 100% 50%);
+}
+
+.phone-show {
+    color: #fff !important;
+}
+
+.phone-show::before {
+    background: url(/assets/images/phone_icon.svg) no-repeat 50% !important;
+    background-size: contain !important;
+}
+
+.active-toggler {
+    background: #fff !important;
+    transform: rotate(45deg) !important;
+}
+
+.toggler-em-active {
+    background: #159ee3 !important;
+}
+
+.toggler-em-active2 {
+    width: 0 !important;
+}
+
+.main-wrapper-active {
+    padding-top: 146px;
+}
+
+/* Start content */
+
+.content>div {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 0 25px;
+    position: relative;
+}
+
+.content>div>h2 {
+    text-align: center;
+    font-size: 36px;
+    color: rgb(21, 158, 227);
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    padding: 0px 0px 44px;
+    font-family: 'Gliroy Bold';
+}
+
+.branch {
+    width: 280px;
+    margin: 0 28px 100px 0;
+    position: relative;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.branch a {
+    display: block;
+    width: 100%;
+    height: 182px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 0px 0px 1px #cbcbcb;
+    border-radius: 6px;
+}
+
+.branch img {
+    display: block;
+    width: 100%;
+    height: 182px;
+    border-radius: 6px;
+    animation-duration: 0.6s;
+    transition: all 0.6s linear;
+}
+
+.branch a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #0077b3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.15;
+    border-radius: 6px;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.branch a:hover::after {
+    opacity: 0;
+}
+
+.branch p {
+    width: calc(100% - 20px);
+    position: absolute;
+    top: 185px;
+    left: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 119, 179);
+    font-family: 'Gliroy Bold';
+}
+
+.allbranches {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* End content */
+
+.active {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+}
+
+.active::before {
+    opacity: 1 !important;
+}
+
+.active::after {
+    opacity: 0.6 !important;
+    background: rgb(15, 200, 240) !important;
+}
+
+
+/* Start Footer */
+
+footer {
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+footer>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0px auto;
+    padding: 0px 40px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+
+.footer-left p {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-left a {
+    display: inline-block;
+    color: rgb(220, 220, 220);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0px 0px 0px 25px;
+}
+
+.footer-left img {
+    width: 90px;
+    height: 50px;
+}
+
+.jis span {
+    display: inline-block;
+    width: 18px;
+    height: 17px;
+    vertical-align: middle;
+    margin: 0px 0px 0px 10px;
+    background: url(/assets/images/jis.svg) center / contain no-repeat;
+}
+
+.footer-right span {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.footer-right a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    margin: 0px 4px;
+}
+
+/* End Footer */
+
+
+
+@media (max-width: 479px) and (min-width: 240px) {
+    header>div {
+        padding: 20px 20px 0;
+    }
+
+    .logo a {
+        width: 80px;
+        height: 92px;
+        background: url(/assets/images/logo.svg) no-repeat 0 0;
+        background-size: 100% 100%;
+    }
+
+    .phone {
+        padding: 20px 80px 0 40px !important;
+    }
+
+    .toggler {
+        right: 20px;
+    }
+
+    .asside-nav {
+        width: calc(100% - 10px);
+        right: calc(-100% + 10px);
+    }
+
+    .asside-nav.show-aside {
+        right: 0;
+    }
+
+    .asside-navdiv {
+        padding: 140px 20px 0;
+    }
+
+    .asside-nav-div {
+        height: calc(100vh - 160px);
+    }
+
+    .eachnav {
+        width: 100%;
+        margin: 0;
+    }
+
+    .inner-nav {
+        display: none;
+    }
+
+    .content {
+        padding: 0px 0 0;
+    }
+
+    .content>div {
+        width: 100%;
+        max-width: 1920px;
+        padding: 0 15px;
+        margin: 0;
+    }
+
+    .content-head {
+        padding: 0 70px 30px;
+        font-size: 24px;
+    }
+
+    .branch {
+        width: 100%;
+        margin: 0 0 80px;
+    }
+
+    .branch p {
+        width: calc(100% - 40px);
+        font-size: 18px;
+        top: calc(100% + 15px);
+        margin: 0;
+    }
+
+    .branch img {
+        height: 225px;
+    }
+
+    .branch a {
+        height: 225px;
+    }
+
+    footer {
+        height: auto;
+    }
+
+    footer>div {
+        display: block;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-left {
+        padding: 0 0 10px;
+        display: block;
+        justify-content: space-between;
+    }
+}
+
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .inner-nav {
+        display: none;
+    }
+
+
+    .content>div {
+        width: 100%;
+        max-width: 1920px;
+        padding: 0 0px 0 20px;
+        margin: 0;
+    }
+
+    .branch {
+        width: calc(33.333333% - 28px);
+        margin: 0 28px 80px 0;
+    }
+
+    .branch img {
+        height: 145px;
+    }
+
+    .branch a {
+        height: 100%;
+    }
+
+    .branch p {
+        width: calc(100% - 60px);
+        font-size: 18px;
+        top: calc(100% + 15px);
+        margin: 0;
+    }
+}
+
+@media (max-width: 1280px) and (min-width: 1024px) {
+    .inner-nav {
+        display: none;
+    }
+
+    .content>div {
+        width: 100%;
+        max-width: 1004px;
+        padding: 0 40px 0 40px;
+        margin: 0 auto;
+    }
+}

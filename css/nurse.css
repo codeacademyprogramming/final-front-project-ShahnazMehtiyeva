@@ -1,0 +1,475 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gliroy';
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Gliroy';
+    src: url(/assets/fonts/Gilroy-Black.ttf);
+}
+
+.main-wrapper {
+    min-height: 100%;
+    padding: 0 0 100px;
+    position: relative;
+}
+
+
+/* Start header */
+header {
+    height: 146px;
+}
+
+header>div {
+    height: 146px;
+    padding: 30px 40px 0;
+    position: relative;
+    z-index: 3;
+}
+
+header .phone {
+    padding: 7px 90px 0 80px;
+    text-align: right;
+}
+
+.logo {
+    width: 100px;
+    float: left;
+}
+
+.logo a {
+    background: url(/assets/images/logo.svg) no-repeat 0 0;
+    width: 100px;
+    height: 116px;
+    display: inline-block;
+    background-size: 100% 100%;
+}
+
+
+header .phone span {
+    display: block;
+    padding: 0 0 5px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #159ee3;
+}
+
+header .phone a {
+    display: inline-block;
+    color: #159ee3;
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+    position: relative;
+}
+
+header .phone a::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(/assets/images/phone_icon_active.svg) no-repeat 50%;
+    background-size: contain !important;
+    position: absolute;
+    top: 3px;
+    left: -28px;
+}
+
+header .phone a:hover::before {
+    transform: rotate(0deg);
+    animation: 0.62s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0s 1 normal both running shake;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: rotate(7deg);
+    }
+
+    20%,
+    80% {
+        transform: rotate(-7deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: rotate(7deg);
+    }
+
+    40%,
+    60% {
+        transform: rotate(-7deg);
+    }
+}
+
+/* End header */
+
+/* Start right side */
+
+.right-side {
+    width: 330px;
+    height: 120%;
+    background: #f8fcfe;
+    position: fixed;
+    right: -330px;
+    top: -10%;
+    clip-path: ellipse(100% 50% at 100% 50%);
+    animation-name: right-side-anime;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 0.9s;
+    transition: all 0.9s linear;
+}
+
+.right-side>div {
+    width: 330px;
+    height: 110%;
+    background: #eaf6fd;
+    position: fixed;
+    top: -5%;
+    right: -330px;
+    clip-path: ellipse(100% 50% at 100% 50%);
+    animation-name: right-side-anime2;
+    animation-fill-mode: forwards;
+    animation-duration: 0.9s;
+    transition: all 0.9s linear;
+}
+
+.right-side>div>div {
+    width: 330px;
+    height: 100%;
+    background: #d5edfa;
+    position: fixed;
+    top: -0%;
+    right: -330px;
+    clip-path: ellipse(100% 50% at 100% 50%);
+    animation-name: right-side-anime3;
+    animation-fill-mode: forwards;
+    animation-duration: 0.9s;
+    transition: all 0.9s linear;
+}
+
+@keyframes right-side-anime {
+    from {
+        right: -330px;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes right-side-anime2 {
+    from {
+        right: -330px;
+    }
+
+    to {
+        right: -110px;
+    }
+}
+
+@keyframes right-side-anime3 {
+    from {
+        right: -330px;
+    }
+
+    to {
+        right: -220px;
+    }
+}
+
+
+/* End right side */
+
+/* Start inner left navbar */
+
+.inner-nav {
+    display: block;
+    width: 70px;
+    position: absolute;
+    left: 40px;
+    top: 245px;
+}
+
+.inner-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inner-nav ul li {
+    padding: 0 0 20px;
+}
+
+.inner-nav ul li a {
+    display: block;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    overflow: hidden;
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+
+.inner-nav ul li a::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #c2c2c2;
+    opacity: 0.3;
+    border-radius: 0 0 0 100%;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.inner-nav ul li a img {
+    display: block;
+    max-height: 38px;
+    max-width: 38px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.inner-nav ul li a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(225deg, #0fc8f0, #149de2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.inner-nav ul li a:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+}
+
+.inner-nav ul li a:hover::before {
+    opacity: 1;
+}
+
+.inner-nav ul li a:hover::after {
+    background: #0fc8f0;
+    opacity: 0.6;
+}
+
+/* End inner left navbar */
+
+/* Start content */
+
+.content>div {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+.content-head {
+    padding: 0 0 60px;
+    text-align: center;
+    font-size: 36px;
+    color: #159ee3;
+    font-weight: bold;
+    position: relative;
+}
+
+
+.go-back {
+    padding: 10px 0 0;
+    position: absolute;
+    top: 0;
+}
+
+.go-back a {
+    display: inline-block;
+    padding: 0 0 0 25px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #0077b3;
+    position: relative;
+}
+
+.go-back a::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(/assets/images/arrow_back_blue.svg) no-repeat 0 50%;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.go-back a:hover::before {
+    transform: translate(-5px, 0);
+}
+
+.nurse-image{
+    padding: 0 0 30px;
+}
+
+.nurse-image img{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+.nurse-content-head{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.nurse-content-head h3{
+    width: calc(100% - 180px);
+    padding: 17px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #159ee3;
+}
+
+.nurse-content-head div a{
+    display: inline-block;
+    height: 58px;
+    padding: 0 30px;
+    line-height: 58px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background-image: linear-gradient(250deg, #0fc8f0, #149de2);
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+}
+
+.nurse-content-head div a:hover{
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.05);
+}
+
+.nurse-text{
+    font-size: 16px;
+    line-height: 1.75;
+    color: #404040;
+}
+
+.nurse-text p{
+    padding: 0 0 20px;
+    margin: 0;
+}
+.active {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+}
+
+.active::before {
+    opacity: 1 !important;
+}
+
+.active::after {
+    opacity: 0.6 !important;
+    background: rgb(15, 200, 240) !important;
+}
+
+
+/* Start Footer */
+
+footer {
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+footer>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0px auto;
+    padding: 0px 40px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+
+.footer-left p {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-left a {
+    display: inline-block;
+    color: rgb(220, 220, 220);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0px 0px 0px 25px;
+}
+
+.footer-left img {
+    width: 90px;
+    height: 50px;
+}
+
+.jis span {
+    display: inline-block;
+    width: 18px;
+    height: 17px;
+    vertical-align: middle;
+    margin: 0px 0px 0px 10px;
+    background: url(/assets/images/jis.svg) center / contain no-repeat;
+}
+
+.footer-right span {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.footer-right a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    margin: 0px 4px;
+}
+
+/* End Footer */
