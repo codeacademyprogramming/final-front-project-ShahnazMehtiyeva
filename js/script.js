@@ -1,95 +1,71 @@
 $(document).ready(function () {
+
+    var count2 = 0;
+    var bulletslength = $(".bullets a").length;
+
     $(".slider, .index-inset").addClass("show");
+
     setTimeout(function () {
         var count = 0;
         setInterval(function () {
-            $(".inner-nav ul li").eq(count).addClass("show");
+            $(".inner-nav ul li").eq(count).addClass("show"); // for inner nav to shown one by one 
             count++;
         }, 300);
     }, 300);
 
 
     if ($(".slider").length) {
-        $(".slider > div > div img").eq(0).addClass("scale");
+        $(".slider > div > div img").eq(0).addClass("scale"); // for scaling image on slider
     }
 
-    function index_go(_this, _this_src, _this_name, _this_link) {
-        $(".bullets a").removeClass("active2");
-        _this.addClass("active2");
+    function index_go(clicked, source, name, link) {
+        $(".bullets a").removeClass("active2"); // removing active class from all bullet button
+        clicked.addClass("active2");
 
         $(".bullets span").addClass("hide");
 
-        $(".slider > div > div").prepend("<img src='" + _this_src + "' alt='' />");
+        $(".slider > div > div").prepend("<img src='" + source + "' alt='' />"); // prepending image tag with new image src 
         $(".slider > div > div img").eq(1).addClass("hide");
         setTimeout(function () {
-            $(".slider > div > div img").eq(0).addClass("scale");
-            if ($(".bullets a.active2").index() == $(".bullets a").length - 1) {
-                $(".bullets span").html($(".bullets a:first-child").data("name").replace("<br>", " ").replace("<br/>", " "));
-            } else {
-                $(".bullets span").html($(".bullets a.active2 + a").data("name").replace("<br>", " ").replace("<br/>", " "));
-            }
+            $(".slider > div > div img").eq(0).addClass("scale"); //scaling image 
             $(".bullets span").removeClass("hide");
             $(".slider > div > div img").eq(1).remove();
         }, 300);
-
-        $(".index-inset h2").addClass("hide");
+        $(".index-inset h2").addClass("hide"); //hiding header in index-inset
         setTimeout(function () {
-            $(".index-inset h2").html(_this_name);
-            $(".index-inset h2").removeClass("hide");
+            $(".index-inset h2").html(name); //giving new header text 
+            $(".index-inset h2").removeClass("hide"); //showing header
         }, 480);
         setTimeout(function () {
-            $(".index-inset .link").addClass("hide");
+            $(".index-inset .link").addClass("hide"); //hiding  "Daha etrafli "
         }, 150);
         setTimeout(function () {
-            $(".index-inset .link a").attr("href", _this_link);
-            $(".index-inset .link").removeClass("hide");
+            $(".index-inset .link a").attr("href", link); // giving new link url to link
+            $(".index-inset .link").removeClass("hide"); //showing link "Daha etrafli"
         }, 650);
     }
 
-    $(".bullets a").click(function () {
-        var _this = $(this),
-            _this_src = _this.attr("href"),
-            _this_name = _this.data("name"),
-            _this_link = _this.data("link")
-        index_go(_this, _this_src, _this_name, _this_link);
+    $(".bullets a").click(function () { //clicking on bullet 
+        var clicked = $(this);
+        var source = $(this).attr("href");
+        var name = $(this).data("name");
+        var link = $(this).data("link");
+        index_go(clicked, source, name, link); //taking clicking bullet button src name link and giving to index_go function
         return false;
     });
 
 
-
-    var count2 = 0;
-    var bulletslength = $(".bullets a").length;
-
-    setTimeout(function () {
-        main_carousel_interval();
-    }, 300);
-
-    $(".index-inset").mouseover(function () {
-        window.C_MOUSE_OVER = true;
-        if (main_interval) {
-            clearInterval(main_interval);
-        }
-    }).mouseleave(function () {
-        window.C_MOUSE_OVER = false;
-        window.C_MOUSE_LEAVE = true;
-        count2 = $(".bullets a.active2").index();
-        main_carousel_interval()
-    });
-
-    $(".index-inset").mousemove(function () {
-        window.C_MOUSE_OVER = true;
-    });
-
-    function main_carousel_interval() {
-        main_interval = setInterval(function () {
+    setTimeout(function () { // changing slide after 3 second
+        setInterval(function () {
+            count2 = $(".bullets .active2").index(); //getting current active bullet button index 
             count2++;
             if (count2 == bulletslength) {
                 count2 = 0;
             }
-
             $(".bullets a").eq(count2).click();
-
         }, 5000);
-    }
+    }, 300);
+
+
 
 })

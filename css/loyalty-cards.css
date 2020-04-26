@@ -14,17 +14,17 @@ a {
 
 @font-face {
     font-family: 'Gliroy';
-    src: url(/assets/fonts/Gilroy-Regular.otf);
+    src: url(../assets/fonts/Gilroy-Regular.otf);
 }
 
-@font-face{
+@font-face {
     font-family: 'Gliroy Bold';
-    src: url(/assets/fonts/Gilroy-Bold.otf);
+    src: url(../assets/fonts/Gilroy-Bold.otf);
 }
 
-@font-face{
+@font-face {
     font-family: 'Gliroy Light';
-    src: url(/assets/fonts/Gilroy-Light.otf);
+    src: url(../assets/fonts/Gilroy-Light.otf);
 }
 
 .main-wrapper {
@@ -57,7 +57,7 @@ header .phone {
 }
 
 .logo a {
-    background: url(/assets/images/logo.svg) no-repeat 0 0;
+    background: url(../assets/images/logo.svg) no-repeat 0 0;
     width: 100px;
     height: 116px;
     display: inline-block;
@@ -87,7 +87,7 @@ header .phone a::before {
     display: block;
     width: 20px;
     height: 20px;
-    background: url(/assets/images/phone_icon_active.svg) no-repeat 50%;
+    background: url(../assets/images/phone_icon_active.svg) no-repeat 50%;
     background-size: contain !important;
     position: absolute;
     top: 3px;
@@ -289,14 +289,6 @@ header .phone a:hover::before {
     z-index: 4;
 }
 
-.em-active {
-    width: 2px !important;
-    left: 9px !important;
-    height: 20px !important;
-    top: -3px !important;
-    background: #159ee3;
-}
-
 .show-aside {
     right: 0;
     box-shadow: -20px 0 20px 0 rgba(0, 0, 0, 0.15);
@@ -308,26 +300,42 @@ header .phone a:hover::before {
 }
 
 .phone-show::before {
-    background: url(/assets/images/phone_icon.svg) no-repeat 50% !important;
+    background: url(../assets/images/phone_icon.svg) no-repeat 50% !important;
     background-size: contain !important;
 }
 
 .active-toggler {
     background: #fff !important;
-    transform: rotate(45deg) !important;
 }
 
 .toggler-em-active {
     background: #159ee3 !important;
 }
 
-.toggler-em-active2 {
-    width: 0 !important;
-}
 
 .main-wrapper-active {
     padding-top: 146px;
 }
+
+.active3 em:first-child {
+    width: 2px !important;
+    left: 9px !important;
+}
+
+
+.active3 em:first-child:first-child+em+em {
+    width: 0 !important;
+}
+
+.active_second em:first-child {
+    height: 20px !important;
+    top: -3px !important;
+}
+
+.active_last {
+    transform: rotate(45deg) !important;
+}
+/*Asside-nav end */
 
 /* Start right side */
 
@@ -641,7 +649,7 @@ footer>div {
     height: 17px;
     vertical-align: middle;
     margin: 0px 0px 0px 10px;
-    background: url(/assets/images/jis.svg) center / contain no-repeat;
+    background: url(../assets/images/jis.svg) center / contain no-repeat;
 }
 
 .footer-right span {
@@ -661,6 +669,123 @@ footer>div {
 
 /* End Footer */
 
+/* Icon started*/
+
+.icon {
+    position: fixed;
+    right: 25px;
+    bottom: 80px;
+}
+
+.icon .call {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px 0px;
+    background: url(../assets/images/ic.png) 50% center / 50% no-repeat rgb(21, 158, 227);
+    border-radius: 50%;
+    transition: all 0.3s linear 0s;
+}
+
+.icon .call::before,
+.icon ul>li a::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 2px 0px;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: all 0.1s linear 0s;
+}
+
+.icon .call::after,
+.icon ul>li a::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 2px 0px;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: all 0.2s linear 0s;
+}
+
+.icon ul {
+    position: absolute;
+    right: 0px;
+    bottom: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear 0s;
+    list-style: none;
+}
+
+.icon ul>li {
+    padding: 0px 0px 5px;
+    transition: all 0.2s linear 0s;
+}
+
+.icon ul>li a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px 0px;
+    border-radius: 50%;
+}
+
+.icon:hover ul {
+    opacity: 1 ;
+    visibility: visible ;
+    transform: translate(0, 0);
+}
+
+.icon:hover ul li {
+    padding: 0 0 15px;
+}
+
+.icon .call:hover {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
+    transform: rotate(360deg);
+}
+
+.icon .call:hover::before,
+.icon ul li a:hover::before {
+    transform: scale(1.15);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon .call:hover::after,
+.icon ul li a:hover::after {
+    transform: scale(1.4);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon ul li a:hover {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
+}
+
+.icon ul li .facebook {
+    background: url(../assets/images/facebook_icon.png) 50% center / 55% no-repeat rgb(59, 89, 152);
+}
+.icon ul li .whatsapp {
+    background: url(../assets/images/whatsapp_white_icon.png) 50% center / 55% no-repeat rgb(41, 178, 0);
+}
+
+.icon ul li a.chat {
+    background: url(../assets/images/chat_icon.svg) 50% center / 55% no-repeat rgb(238, 130, 8);
+}
+/* Icon ended*/
+
+
 @media (max-width: 479px) and (min-width: 240px) {
     header>div {
         padding: 20px 20px 0;
@@ -669,7 +794,7 @@ footer>div {
     .logo a {
         width: 80px;
         height: 92px;
-        background: url(/assets/images/logo.svg) no-repeat 0 0;
+        background: url(../assets/images/logo.svg) no-repeat 0 0;
         background-size: 100% 100%;
     }
 
@@ -774,15 +899,19 @@ footer>div {
         display: none;
     }
 
-    .content > div {
+    .content>div {
         width: 100%;
         max-width: 1920px;
         padding: 0 20px 0 20px;
         margin: 0;
     }
 
-    .eachcard{
+    .eachcard {
         width: calc(33.333333% - 30px);
+    }
+
+    .main-wrapper {
+        position: absolute;
     }
 
 }
@@ -797,5 +926,10 @@ footer>div {
         max-width: 1004px;
         padding: 0 40px 0 40px;
         margin: 0 auto;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        position: absolute;
     }
 }

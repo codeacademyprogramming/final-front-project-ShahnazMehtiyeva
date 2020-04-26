@@ -14,12 +14,12 @@ a {
 
 @font-face {
     font-family: 'Gliroy';
-    src: url(/assets/fonts/Gilroy-Regular.otf);
+    src: url(../assets/fonts/Gilroy-Regular.otf);
 }
 
 @font-face {
     font-family: 'Gliroy Bold';
-    src: url(/assets/fonts/Gilroy-Bold.otf);
+    src: url(../assets/fonts/Gilroy-Bold.otf);
 }
 
 .main-wrapper {
@@ -52,7 +52,7 @@ header .phone {
 }
 
 .logo a {
-    background: url(/assets/images/logo.svg) no-repeat 0 0;
+    background: url(../assets/images/logo.svg) no-repeat 0 0;
     width: 100px;
     height: 116px;
     display: inline-block;
@@ -83,7 +83,7 @@ header .phone a::before {
     display: block;
     width: 20px;
     height: 20px;
-    background: url(/assets/images/phone_icon.svg) no-repeat 50%;
+    background: url(../assets/images/phone_icon.svg) no-repeat 50%;
     background-size: contain !important;
     position: absolute;
     top: 3px;
@@ -179,7 +179,7 @@ header .phone a:hover::before {
     position: fixed;
     top: 0;
     right: 0px;
-    z-index: 3;
+    z-index: 8;
     box-shadow: 0px 0 0px 0 rgba(0, 0, 0, 0);
     clip-path: ellipse(100% 50% at 200% 50%);
     animation-duration: 0.45s;
@@ -282,7 +282,7 @@ header .phone a:hover::before {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 4;
+    z-index: 9;
 }
 
 .show-aside {
@@ -296,7 +296,7 @@ header .phone a:hover::before {
 }
 
 .phone-show::before {
-    background: url(/assets/images/phone_icon.svg) no-repeat 50% !important;
+    background: url(../assets/images/phone_icon.svg) no-repeat 50% !important;
     background-size: contain !important;
 }
 
@@ -313,24 +313,26 @@ header .phone a:hover::before {
     padding-top: 146px;
 }
 
-.active3 em:first-child{
+.active3 em:first-child {
     width: 2px !important;
     left: 9px !important;
 }
 
 
-.active3 em:first-child:first-child +em+em{
+.active3 em:first-child:first-child+em+em {
     width: 0 !important;
 }
 
-.active_second em:first-child{
+.active_second em:first-child {
     height: 20px !important;
     top: -3px !important;
 }
 
-.active_last{
+.active_last {
     transform: rotate(45deg) !important;
 }
+
+/*Asside-nav end */
 
 /* Start content */
 
@@ -506,13 +508,13 @@ header .phone a:hover::before {
 }
 
 .slider img.scale {
-    -webkit-transition: all 5.45s linear;
+    transition: all 5.45s linear;
     transform: scale(1.09);
 }
 
-.hide{
+.hide {
     opacity: 0;
-    visibility: hidden; 
+    visibility: hidden;
 }
 
 .index-inset {
@@ -537,6 +539,7 @@ header .phone a:hover::before {
 }
 
 .index-inset h2 {
+    font-family: 'Gliroy Bold';
     font-size: 54px;
     line-height: 64px;
     color: rgb(255, 255, 255);
@@ -546,11 +549,13 @@ header .phone a:hover::before {
     margin: 0;
 }
 
-.index-inset h2.hide ,.index-inset .link.hide{
+.index-inset h2.hide,
+.index-inset .link.hide {
     opacity: 0;
-      visibility: hidden;
-      transform: translate(0px, -100px);
+    visibility: hidden;
+    transform: translate(0px, -100px);
 }
+
 .index-inset .link {
     animation-duration: 0.3s;
     transition: all 0.3s linear 0s;
@@ -585,7 +590,7 @@ header .phone a:hover::before {
     right: 10px;
     top: 19px;
     animation-duration: 0.2s;
-    background: url(/assets/images/round_link.svg) 0px 0px / 100% no-repeat;
+    background: url(../assets/images/round_link.svg) 0px 0px / 100% no-repeat;
     transition: all 0.2s linear 0s;
 }
 
@@ -734,7 +739,7 @@ footer>div {
     height: 17px;
     vertical-align: middle;
     margin: 0px 0px 0px 10px;
-    background: url(/assets/images/jis.svg) center / contain no-repeat;
+    background: url(../assets/images/jis.svg) center / contain no-repeat;
 }
 
 .footer-right span {
@@ -753,3 +758,334 @@ footer>div {
 }
 
 /* End Footer */
+
+/* Icon started*/
+
+.icon {
+    position: fixed;
+    right: 25px;
+    bottom: 80px;
+}
+
+.icon .call {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px 0px;
+    background: url(../assets/images/ic.png) 50% center / 50% no-repeat rgb(21, 158, 227);
+    border-radius: 50%;
+    transition: all 0.3s linear 0s;
+}
+
+.icon .call::before,
+.icon ul>li a::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 2px 0px;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: all 0.1s linear 0s;
+}
+
+.icon .call::after,
+.icon ul>li a::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 2px 0px;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: all 0.2s linear 0s;
+}
+
+.icon ul {
+    position: absolute;
+    right: 0px;
+    bottom: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear 0s;
+    list-style: none;
+}
+
+.icon ul>li {
+    padding: 0px 0px 5px;
+    transition: all 0.2s linear 0s;
+}
+
+.icon ul>li a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px 0px;
+    border-radius: 50%;
+}
+
+.icon:hover ul {
+    opacity: 1 ;
+    visibility: visible ;
+    transform: translate(0, 0);
+}
+
+.icon:hover ul li {
+    padding: 0 0 15px;
+}
+
+.icon .call:hover {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
+    transform: rotate(360deg);
+}
+
+.icon .call:hover::before,
+.icon ul li a:hover::before {
+    transform: scale(1.15);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon .call:hover::after,
+.icon ul li a:hover::after {
+    transform: scale(1.4);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon ul li a:hover {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
+}
+
+.icon ul li .facebook {
+    background: url(../assets/images/facebook_icon.png) 50% center / 55% no-repeat rgb(59, 89, 152);
+}
+.icon ul li .whatsapp {
+    background: url(../assets/images/whatsapp_white_icon.png) 50% center / 55% no-repeat rgb(41, 178, 0);
+}
+
+.icon ul li a.chat {
+    background: url(../assets/images/chat_icon.svg) 50% center / 55% no-repeat rgb(238, 130, 8);
+}
+/* Icon ended*/
+
+@media (max-width: 479px) and (min-width: 240px) {
+    header>div {
+        padding: 20px 20px 0;
+    }
+
+    .logo a {
+        width: 80px;
+        height: 92px;
+        background: url(../assets/images/logo.svg) no-repeat 0 0;
+        background-size: 100% 100%;
+    }
+
+    .phone {
+        padding: 20px 80px 0 40px !important;
+    }
+
+    .toggler {
+        right: 20px;
+    }
+
+    .asside-nav {
+        width: calc(100% - 10px);
+        right: calc(-100% + 10px);
+    }
+
+    .asside-nav.show-aside {
+        right: 0;
+    }
+
+    .asside-navdiv {
+        padding: 140px 20px 0;
+    }
+
+    .asside-nav-div {
+        height: calc(100vh - 160px);
+    }
+
+    .eachnav {
+        width: 100%;
+        margin: 0;
+    }
+
+    .slider {
+        display: none;
+    }
+
+    .index-inset {
+        display: none;
+    }
+
+    .toggler {
+        background: #159ee3;
+    }
+
+    .toggler em {
+        background: #fff;
+    }
+
+    header .phone span {
+        color: #159ee3;
+    }
+
+    header .phone a {
+        color: #159ee3;
+    }
+
+    header .phone a::before {
+        background: url(../assets/images/phone_icon_active.svg) no-repeat 50%;
+    }
+
+    .inner-nav {
+        width: 100%;
+        padding: 60px 0 0;
+    }
+
+    .inner-nav ul {
+        width:100%;
+        padding: 0;
+        min-height: 0;
+    }
+
+    .inner-nav ul li {
+        width: 140px;
+        height: 140px;
+        margin: 6px;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05), 0 10px 27px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    .inner-nav ul>li span {
+        height: 115px;
+    }
+
+    .inner-nav a::before {
+        width: 50px;
+        height: 50px;
+    }
+
+    .inner-nav strong {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .bullets {
+        display: none;
+    }
+
+    footer {
+        height: auto;
+    }
+
+    footer>div {
+        display: block;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-left {
+        padding: 0 0 10px;
+        display: block;
+        justify-content: space-between;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        position: absolute;
+    }
+
+}
+
+
+@media (max-width: 1023px) and (min-width: 768px) {
+
+    .slider {
+        display: none;
+    }
+
+    .index-inset {
+        display: none;
+    }
+
+    .toggler {
+        background: #159ee3;
+    }
+
+    .toggler em {
+        background: #fff;
+    }
+
+    header .phone span {
+        color: #159ee3;
+    }
+
+    header .phone a {
+        color: #159ee3;
+    }
+
+    header .phone a::before {
+        background: url(../assets/images/phone_icon_active.svg) no-repeat 50%;
+    }
+
+    .inner-nav {
+        width: 90%;
+        height: 20%;
+        top: 240px;
+        position: absolute;
+        left: 20px;
+    }
+
+    .bullets {
+        display: none;
+    }
+
+    footer {
+        height: 70px;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        position: absolute;
+    }
+}
+
+@media (max-width: 1280px) and (min-width: 1024px) {
+
+    .slider {
+        width: calc(100% - 100px);
+        right: -120px;
+    }
+
+    .inner-nav {
+        z-index: 7;
+        position: absolute;
+        width: 50%;
+        height: 10%;
+        top: 500px;
+    }
+
+    .index-inset h2 {
+        font-size: 48px;
+        line-height: 72px;
+
+    }
+
+    .bullets {
+        bottom: 500px;
+        right: -5px;
+
+    }
+
+    .main-wrapper {
+        width: 100%;
+        position: absolute;
+    }
+}
